@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Breaker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h2 class="game-title">Brick Breaker Game</h2>
+
+        <!-- Formulär för användarnamn innan spelet startar -->
+        <div id="username-form">
+            <input type="text" id="username-input" placeholder="Username (Optional)" autocomplete="off"><br>
+            <button id="start-btn">Start Game</button>
+        </div>
+
+        <!-- Spelskärmen, initialt dold tills spelet startas -->
+        <div id="game-screen" style="display: none;">
+
+            <!-- Knapp för att visa spelets instruktioner -->
+            <button id="infoButton">Info</button>
+
+            <!-- Popup-fönster för spelets instruktioner, initialt dolt -->
+            <div id="infoModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close" id="infoClose">&times;</span>
+                    <p id="infotext">
+                        <b>Game Instructions:</b><br><br>
+                        Welcome to Brick Breaker!<br><br>
+                        
+                        <b>Controls:</b><br>
+                        - Move paddle: <b>Right Arrow</b> (→) and <b>Left Arrow</b> (←)<br>
+                        - Launch ball: <b>Space Bar</b><br><br>
+                        
+                        <b>Objective:</b><br>
+                        - Break all bricks without losing the ball.<br>
+                        - You have 3 lives. Score points by breaking bricks.<br><br>
+                        
+                        <b>Tips:</b><br>
+                        - The ball bounces off walls and the paddle.<br>
+                        - Use paddle sections to control the ball:<br>
+                          - <b>Left & Right (Red):</b> Bounces left or Right<br>
+                          - <b>Middle (Green):</b> Bounces straight up<br><br>
+                        
+                        <b>Good luck and enjoy!</b>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Meddelanden innan spelet startar -->
+            <div id="start-message">Press Space Bar to Start</div>
+            <div id="countdown-message"></div>
+
+            <!-- Game Over-skärm som visas när spelet är slut -->
+            <div id="game-over-screen" style="display: none;">
+                <div id="game-over-message">Game Over!</div>
+                <p id="score-message"></p>
+                <div id="game-buttons">
+                    <button id="return-btn">Return to Main Menu</button>
+                </div>
+            </div>
+
+            <!-- Canvas-behållare för spelet -->
+            <div id="canvas-container">
+                <canvas id="starCanvas" width="800" height="600"></canvas>
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Länkar till JavaScript-filen som hanterar spelfunktionaliteten -->
+    <script src="script.js"></script>
+</body>
+</html>
